@@ -1,0 +1,2 @@
+class Bump < ApplicationRecord
+end
