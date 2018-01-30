@@ -31,7 +31,7 @@ class BumpsController < ApplicationController
   def destroy
     @bump = Bump.find_by(id: params[:id])
     if @bump.destroy
-      @bumps = Design.all
+      @bumps = Bump.all
       render json: @bumps
     else
       render json: {errors: @bump.errors.full_messages}, status: 422
