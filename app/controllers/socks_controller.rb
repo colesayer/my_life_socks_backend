@@ -6,7 +6,7 @@ class SocksController < ApplicationController
 
   def show
     @sock = Sock.find_by(id: params[:id])
-    render json: @sock
+    render json: @sock.to_json( :include => [:design, :bump], :except => [:image] )
   end
 
   def create
